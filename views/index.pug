@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div.container
+    div.jumbotron.bg-secondary.text-light.text-center
+      h1 Aapka Swagat Hai !
+    div(style="margin: 0 20%;") 
+      form(action="/save" method="post" enctype="multipart/form")
+        div.form-group
+          input.form-control(type="text" name='name' placeholder='Enter your name')
+        div.form-group
+          input.form-control(type="password" name='password' placeholder='Enter your password')
+        div.form-group
+          input.form-control(type="text" name='email' placeholder='Enter your email')
+        div.form-group
+          input.form-control(type="text" name='mobile' placeholder='Enter your mobile')
+        div.form-group.row
+          input.col-sm-5.form-control.btn-secondary(type="submit" style="margin-right:16.5%;")
+          a.col-sm-5.form-control.btn.btn-secondary(href="/showRecords") Show Records

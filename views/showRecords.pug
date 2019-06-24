@@ -1,0 +1,27 @@
+extends layout 
+
+block content
+    div.container 
+        div.jumbotron.bg-secondary.text-light.text-center
+            h1 Ye Hai Aapke Records !
+        div
+            table.table.table-striped
+                tr
+                    th Name
+                    th Password 
+                    th Email
+                    th Mobile
+                    th Edit
+                    th Delete
+                    each res in response
+                        tr
+                            td=res.name
+                            td=res.password
+                            td=res.email
+                            td=res.mobile
+                            td(style="width:100px;")
+                                a(href="/edit?id="+res._id)
+                                    img(src="/images/edit-logo.png",  height="20px" width="20px"  alt="")
+                            td
+                                a(href="/del?id="+res._id)
+                                    img(src="/images/delete-logo.png", height="20px" width="20px" alt="")
