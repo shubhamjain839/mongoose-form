@@ -9,8 +9,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Aapka Swagat Hai!' });
 });
 router.get('/edit', function(req, res, next) {
-  res.render('edit', { title: 'Kripya Apna Record Edit Kre !','query':req.query.id});
-
+  record.find({_id:req.query.id},function(err,result){
+    res.render('edit', { title: 'Kripya Apna Record Edit Kre !','query':req.query.id,'result':result});
+  });
 });
 router.get('/showRecords', function(req, res, next) {
   record.find({},function(err,result){
